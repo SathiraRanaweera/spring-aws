@@ -11,7 +11,7 @@ on:
 
 env:
   PIPELINE_USER_ACCESS_KEY_ID: ${{ secrets.AKIAVP4TUSVQMKVEJZEU }}
-  PIPELINE_USER_SECRET_ACCESS_KEY: ${{ secrets.+t2Kq6/RvHqBDxD0hI6Ne0O97bUWhK2xcHWUqj/r }}
+  PIPELINE_USER_SECRET_ACCESS_KEY: ${{ secrets. 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 }}
   SAM_TEMPLATE: template.yaml
   TESTING_STACK_NAME: git-cicd-dev
   TESTING_PIPELINE_EXECUTION_ROLE: arn:aws:iam::377729881440:role/aws-sam-cli-managed-dev-pipe-PipelineExecutionRole-14AI6FSK2D18U
