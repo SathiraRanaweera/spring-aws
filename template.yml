@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Serverless Spring Boot 2 API - spring.aws::SpringAWS
+Globals:
+  Api:
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  SpringAWSFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.git.cicd.StreamLambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: .
+      MemorySize: 512
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 30
+      Events:
+        ProxyResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
